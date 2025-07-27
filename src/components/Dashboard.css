@@ -1,0 +1,50 @@
+.dashboard-wrapper {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.dashboard-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 70px;
+  background-color: #1f1f1f;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  font-size: 1.5rem;
+}
+
+.dashboard-container {
+  display: flex;
+  margin-top: 70px; /* space for the fixed header */
+  height: calc(100vh - 70px);
+}
+
+.main-content {
+  flex: 1;
+  padding: 24px;
+  overflow-y: auto;
+}
+
+/* Dashboard.css */
+
+.dashboard-content {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  justify-content: center;   /* Center horizontally */
+  align-items: center;       /* Center vertically */
+  height: calc(100vh - 60px); /* Adjust based on your header height */
+  box-sizing: border-box;
+}
+
+.container {
+  text-align: center;
+  width: 100%;
+  max-width: 400px;
+}
+
