@@ -30,7 +30,7 @@ export default function AddPage() {
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
           style={{ marginBottom: '10px', width: '100%' }}
-        />
+          required/>
         <br />
         <button type="submit">Add</button>
       </form>
