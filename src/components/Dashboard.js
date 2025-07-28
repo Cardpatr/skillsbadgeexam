@@ -8,7 +8,7 @@ export default function Dashboard() {
     <div className="dashboard-content">
       <div className="container">
         <h2>Welcome to the Dashboard</h2>
-        <p>Select a function from the sidebar.</p>
+        <p>Select a function below.</p>
         <div className="card-row">
           {/* Add Card */}
           <Link to="/dashboard/add" className="dashboard-card-link">

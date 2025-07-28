@@ -1,5 +1,6 @@
 // src/components/AddPage.js
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 export default function AddPage() {
   const [inputValue, setInputValue] = useState('');
@@ -34,6 +35,14 @@ export default function AddPage() {
         <br />
         <button type="submit">Add</button>
       </form>
+      <Link to="/dashboard" style={{
+        position: 'fixed',
+        bottom: '20px',
+        right: '20px',
+        zIndex: 1000
+      }}>
+        <button>Back</button>
+      </Link>
     </div>
   );
 }

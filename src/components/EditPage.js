@@ -1,4 +1,6 @@
+// src/components/EditPage.js
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import Sidebar from './Sidebar';
 
 export default function EditPage() {
@@ -11,7 +13,6 @@ export default function EditPage() {
     setRecords(stored);
   }, []);
 
-  
   const handleEditClick = (id, name) => {
     setEditId(id);
     setEditName(name);
@@ -86,6 +87,14 @@ export default function EditPage() {
           </ul>
         )}
       </div>
+      <Link to="/dashboard" style={{
+        position: 'fixed',
+        bottom: '20px',
+        right: '20px',
+        zIndex: 1000
+      }}>
+        <button>Back</button>
+      </Link>
     </div>
   );
 }

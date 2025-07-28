@@ -1,5 +1,6 @@
 // src/components/ReportPage.js
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 export default function ReportPage() {
   const [records, setRecords] = useState([]);
@@ -21,6 +22,14 @@ export default function ReportPage() {
           <li>No records found.</li>
         )}
       </ul>
+      <Link to="/dashboard" style={{
+        position: 'fixed',
+        bottom: '20px',
+        right: '20px',
+        zIndex: 1000
+      }}>
+        <button>Back</button>
+      </Link>
     </div>
   );
 }
