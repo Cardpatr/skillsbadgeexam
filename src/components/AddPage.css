@@ -5,7 +5,7 @@
 
 .back-btn {
   margin-bottom: 20px;
-  background-color: #007acc;
+  background-color: #333;
   color: white;
   border: none;
   padding: 10px 16px;
@@ -15,7 +15,7 @@
 }
 
 .back-btn:hover {
-  background-color: #005f99;
+  background-color: #424242;
 }
 
 .page-wrapper {
@@ -72,7 +72,7 @@ select {
 
 button[type="submit"] {
   padding: 12px;
-  background-color: #007acc;
+  background-color: #424242;
   color: white;
   border: none;
   border-radius: 8px;
@@ -81,7 +81,7 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-  background-color: #005f99;
+  background-color: #333;
 }
 
 .task-list {
@@ -95,7 +95,7 @@ button[type="submit"]:hover {
   background-color: #2a2a2a;
   padding: 20px;
   border-radius: 8px;
-  border-left: 5px solid #007acc;
+  border-left: 5px solid #fff;
   color: #e0e0e0;
 }
 
