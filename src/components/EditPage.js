@@ -52,82 +52,105 @@ export default function EditPage() {
   };
 
   return (
-    <div style={{ display: 'flex' }}>
+    <div style={{ display: 'flex', height: '100vh', overflow: 'hidden' }}>
       <Sidebar />
-      <div className="container" style={{ flex: 1, padding: '20px' }}>
-        <h2>Edit or Delete Record</h2>
-        {records.length === 0 ? (
-          <p>No records found.</p>
-        ) : (
-          <ul style={{ listStyle: 'none', padding: 0 }}>
-            {records.map(record => (
-              <li
-                key={record.id}
-                style={{
-                  display: 'flex',
-                  flexDirection: 'column',
-                  gap: '10px',
-                  padding: '15px',
-                  borderRadius: '10px',
-                  background: 'rgba(200, 200, 200, 0.1)',
-                  border: '1px solid rgba(150,150,150,0.3)',
-                  backdropFilter: 'blur(5px)',
-                  marginBottom: '20px',
-                }}
-              >
-                {editId === record.id ? (
-                  <form onSubmit={handleUpdate}>
-                    <input
-                      type="text"
-                      placeholder="Name"
-                      value={editName}
-                      onChange={(e) => setEditName(e.target.value)}
-                      required
-                      style={{ width: '100%', marginBottom: '10px' }}
-                    />
-                    <textarea
-                      placeholder="Description"
-                      value={editDescription}
-                      onChange={(e) => setEditDescription(e.target.value)}
-                      rows="3"
-                      style={{ width: '100%', marginBottom: '10px' }}
-                    />
-                    <select
-                      value={editPriority}
-                      onChange={(e) => setEditPriority(e.target.value)}
-                      style={{ width: '100%', marginBottom: '10px' }}
-                    >
-                      <option value="Low">Low</option>
-                      <option value="Medium">Medium</option>
-                      <option value="High">High</option>
-                    </select>
-                    <div style={{ display: 'flex', gap: '10px' }}>
-                      <button type="submit">Save</button>
-                      <button type="button" onClick={() => setEditId(null)}>
-                        Cancel
-                      </button>
-                    </div>
-                  </form>
-                ) : (
-                  <>
-                    <strong>Name:</strong> {record.name}
-                    <strong>Description:</strong> {record.description || '—'}
-                    <strong>Priority:</strong> {record.priority || 'Medium'}
-                    <div style={{ display: 'flex', gap: '10px', marginTop: '10px' }}>
-                      <button onClick={() => handleEditClick(record)}>Edit</button>
-                      <button
-                        onClick={() => handleDelete(record.id)}
-                        style={{ backgroundColor: 'red', color: 'white' }}
+      <div
+        className="container"
+        style={{
+          flex: 1,
+          padding: '20px',
+          overflowY: 'auto',
+          height: '100vh',
+          display: 'flex',
+          flexDirection: 'column'
+        }}
+      >
+        <h2
+          style={{
+            position: 'sticky',
+            top: 0,
+            background: '#1e1e1e',
+            zIndex: 10,
+            paddingBottom: '10px',
+            marginBottom: '20px'
+          }}
+        >
+          Edit or Delete Record
+        </h2>
+        <div style={{ flex: 1, overflowY: 'auto' }}>
+          {records.length === 0 ? (
+            <p>No records found.</p>
+          ) : (
+            <ul style={{ listStyle: 'none', padding: 0 }}>
+              {records.map(record => (
+                <li
+                  key={record.id}
+                  style={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: '10px',
+                    padding: '15px',
+                    borderRadius: '10px',
+                    background: 'rgba(200, 200, 200, 0.1)',
+                    border: '1px solid rgba(150,150,150,0.3)',
+                    backdropFilter: 'blur(5px)',
+                    marginBottom: '20px',
+                  }}
+                >
+                  {editId === record.id ? (
+                    <form onSubmit={handleUpdate}>
+                      <input
+                        type="text"
+                        placeholder="Name"
+                        value={editName}
+                        onChange={(e) => setEditName(e.target.value)}
+                        required
+                        style={{ width: '100%', marginBottom: '10px' }}
+                      />
+                      <textarea
+                        placeholder="Description"
+                        value={editDescription}
+                        onChange={(e) => setEditDescription(e.target.value)}
+                        rows="3"
+                        style={{ width: '100%', marginBottom: '10px' }}
+                      />
+                      <select
+                        value={editPriority}
+                        onChange={(e) => setEditPriority(e.target.value)}
+                        style={{ width: '100%', marginBottom: '10px' }}
                       >
-                        Delete
-                      </button>
-                    </div>
-                  </>
-                )}
-              </li>
-            ))}
-          </ul>
-        )}
+                        <option value="Low">Low</option>
+                        <option value="Medium">Medium</option>
+                        <option value="High">High</option>
+                      </select>
+                      <div style={{ display: 'flex', gap: '10px' }}>
+                        <button type="submit">Save</button>
+                        <button type="button" onClick={() => setEditId(null)}>
+                          Cancel
+                        </button>
+                      </div>
+                    </form>
+                  ) : (
+                    <>
+                      <strong>Name:</strong> {record.name}
+                      <strong>Description:</strong> {record.description || '—'}
+                      <strong>Priority:</strong> {record.priority || 'Medium'}
+                      <div style={{ display: 'flex', gap: '10px', marginTop: '10px' }}>
+                        <button onClick={() => handleEditClick(record)}>Edit</button>
+                        <button
+                          onClick={() => handleDelete(record.id)}
+                          style={{ backgroundColor: 'red', color: 'white' }}
+                        >
+                          Delete
+                        </button>
+                      </div>
+                    </>
+                  )}
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
       </div>
       <Link to="/dashboard" style={{ position: 'fixed', bottom: '20px', right: '20px', zIndex: 1000 }}>
         <button>Back</button>
