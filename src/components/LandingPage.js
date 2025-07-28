@@ -1,7 +1,7 @@
 // src/components/LandingPage.js
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './Dashboard.css'; // Make sure this contains updated styles
+import './LandingPage.css'; 
 
 export default function LandingPage() {
   return (
