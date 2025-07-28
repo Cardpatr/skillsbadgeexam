@@ -9,23 +9,27 @@
   overflow-y: auto;
 }
 
-.dashboard-container h2 {
-  margin-top: 0;
-  padding-top: 60px;   /* Add space above heading */
+.dashboard-container {
   font-size: 1.8rem;
   color: #fff;
+  margin: 0; /* Remove excessive margin */
+  padding: 40px; /* Add reasonable padding */
+  background: #222;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 
 .dashboard-content {
-  flex: 1;
-  /* padding: 20px; */
-  padding-top: 20rem;
   display: flex;
-  justify-content: center;   /* Center horizontally */
-  align-items: center;       /* Center vertically */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
   height: calc(100vh - 60px); /* Adjust based on your header height */
   box-sizing: border-box;
+  min-height: 0;
+  padding: 0; /* Remove excessive padding */
 }
 
 .container {
