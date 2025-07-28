@@ -6,23 +6,25 @@ export default function EditPage() {
   const [editId, setEditId] = useState(null);
   const [editName, setEditName] = useState('');
   const [editDescription, setEditDescription] = useState('');
+  const [editPriority, setEditPriority] = useState('');
 
   useEffect(() => {
     const stored = JSON.parse(localStorage.getItem('records')) || [];
     setRecords(stored);
   }, []);
 
-  const handleEditClick = (id, name, description) => {
+  const handleEditClick = (id, name, description, priority) => {
     setEditId(id);
     setEditName(name);
     setEditDescription(description);
+    setEditPriority(priority || 'Medium');
   };
 
   const handleUpdate = (e) => {
     e.preventDefault();
     const updatedRecords = records.map(record =>
       record.id === editId
-        ? { ...record, name: editName, description: editDescription }
+        ? { ...record, name: editName, description: editDescription, priority: editPriority }
         : record
     );
     setRecords(updatedRecords);
@@ -30,6 +32,7 @@ export default function EditPage() {
     setEditId(null);
     setEditName('');
     setEditDescription('');
+    setEditPriority('');
     alert('Record updated successfully!');
   };
 
@@ -41,6 +44,7 @@ export default function EditPage() {
       setEditId(null);
       setEditName('');
       setEditDescription('');
+      setEditPriority('');
     }
     alert('Record deleted successfully!');
   };
@@ -49,6 +53,7 @@ export default function EditPage() {
     setEditId(null);
     setEditName('');
     setEditDescription('');
+    setEditPriority('');
   };
 
   return (
@@ -92,17 +97,7 @@ export default function EditPage() {
                       value={editName}
                       onChange={(e) => setEditName(e.target.value)}
                       placeholder="Name"
-                      style={{
-                        width: '100%',
-                        marginBottom: '10px',
-                        padding: '10px 12px',
-                        fontSize: '1rem',
-                        border: '1px solid rgba(180,180,180,0.18)',
-                        borderRadius: '8px',
-                        background: 'rgba(255,255,255,0.9)',
-                        outline: 'none',
-                        boxShadow: 'none',
-                      }}
+                      style={inputStyle}
                       required
                     />
                     <input
@@ -110,56 +105,27 @@ export default function EditPage() {
                       value={editDescription}
                       onChange={(e) => setEditDescription(e.target.value)}
                       placeholder="Description"
-                      style={{
-                        width: '100%',
-                        marginBottom: '18px',
-                        padding: '10px 12px',
-                        fontSize: '1rem',
-                        border: '1px solid rgba(180,180,180,0.18)',
-                        borderRadius: '8px',
-                        background: 'rgba(255,255,255,0.9)',
-                        outline: 'none',
-                        boxShadow: 'none',
-                      }}
+                      style={inputStyle}
                       required
                     />
+                    <select
+                      value={editPriority}
+                      onChange={(e) => setEditPriority(e.target.value)}
+                      style={inputStyle}
+                      required
+                    >
+                      <option value="High">High Priority</option>
+                      <option value="Medium">Medium Priority</option>
+                      <option value="Low">Low Priority</option>
+                    </select>
                     <div style={{ display: 'flex', gap: '10px', width: '100%' }}>
                       <div style={{ flex: 1 }}>
-                        <button
-                          type="submit"
-                          style={{
-                            width: '100%',
-                            padding: '10px 0',
-                            fontSize: '1rem',
-                            background: 'rgba(1, 133, 6, 1)',
-                            color: '#222',
-                            border: '1px solid rgba(76,175,80,0.18)',
-                            borderRadius: '8px',
-                            cursor: 'pointer',
-                            transition: 'background 0.2s',
-                            fontWeight: 500,
-                          }}
-                        >
+                        <button type="submit" style={buttonGreen}>
                           Save
                         </button>
                       </div>
                       <div style={{ flex: 1 }}>
-                        <button
-                          type="button"
-                          onClick={handleCancel}
-                          style={{
-                            width: '100%',
-                            padding: '10px 0',
-                            fontSize: '1rem',
-                            background: 'rgba(138, 14, 5, 0.84)',
-                            color: '#222',
-                            border: '1px solid rgba(244,67,54,0.18)',
-                            borderRadius: '8px',
-                            cursor: 'pointer',
-                            transition: 'background 0.2s',
-                            fontWeight: 500,
-                          }}
-                        >
+                        <button type="button" onClick={handleCancel} style={buttonRed}>
                           Cancel
                         </button>
                       </div>
@@ -169,9 +135,12 @@ export default function EditPage() {
                   <>
                     <span style={{ flex: 1 }}>{record.name}</span>
                     <span style={{ flex: 2, marginLeft: '10px', color: '#bbb' }}>{record.description}</span>
+                    <span style={{ marginLeft: '10px', fontWeight: 500, color: '#ffd700' }}>
+                      {record.priority || 'No priority'}
+                    </span>
                     <button
                       style={{ marginLeft: '10px' }}
-                      onClick={() => handleEditClick(record.id, record.name, record.description)}
+                      onClick={() => handleEditClick(record.id, record.name, record.description, record.priority)}
                     >
                       Edit
                     </button>
@@ -191,3 +160,42 @@ export default function EditPage() {
     </div>
   );
 }
+
+// Reusable styles
+const inputStyle = {
+  width: '100%',
+  marginBottom: '10px',
+  padding: '10px 12px',
+  fontSize: '1rem',
+  border: '1px solid rgba(180,180,180,0.18)',
+  borderRadius: '8px',
+  background: 'rgba(255,255,255,0.9)',
+  outline: 'none',
+  boxShadow: 'none',
+};
+
+const buttonGreen = {
+  width: '100%',
+  padding: '10px 0',
+  fontSize: '1rem',
+  background: 'rgba(1, 133, 6, 1)',
+  color: '#222',
+  border: '1px solid rgba(76,175,80,0.18)',
+  borderRadius: '8px',
+  cursor: 'pointer',
+  transition: 'background 0.2s',
+  fontWeight: 500,
+};
+
+const buttonRed = {
+  width: '100%',
+  padding: '10px 0',
+  fontSize: '1rem',
+  background: 'rgba(138, 14, 5, 0.84)',
+  color: '#222',
+  border: '1px solid rgba(244,67,54,0.18)',
+  borderRadius: '8px',
+  cursor: 'pointer',
+  transition: 'background 0.2s',
+  fontWeight: 500,
+};
