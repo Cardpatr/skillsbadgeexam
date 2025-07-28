@@ -18,7 +18,7 @@ export default function LandingPage() {
               className="dashboard-card-icon"
             />
             <div><strong>Add Tasks</strong></div>
-            <div style={{ fontSize: '0.95rem', marginTop: 6 }}>Quickly add new to-dos and never miss a task again.</div>
+            <div style={{ fontSize: '0.95rem', marginTop: 6 }}>Quickly add new to-dos and stay organized.</div>
           </div>
           {/* Organize & Edit Card */}
           <div className="dashboard-card">
@@ -28,7 +28,7 @@ export default function LandingPage() {
               className="dashboard-card-icon"
             />
             <div><strong>Organize & Edit</strong></div>
-            <div style={{ fontSize: '0.95rem', marginTop: 6 }}>Edit, update, and organize your tasks with ease.</div>
+            <div style={{ fontSize: '0.95rem', marginTop: 6 }}>Easily update and manage your tasks.</div>
           </div>
           {/* Track Progress Card */}
           <div className="dashboard-card">
@@ -38,7 +38,7 @@ export default function LandingPage() {
               className="dashboard-card-icon"
             />
             <div><strong>Track Progress</strong></div>
-            <div style={{ fontSize: '0.95rem', marginTop: 6 }}>View reports and see your accomplishments grow.</div>
+            <div style={{ fontSize: '0.95rem', marginTop: 6 }}>See your accomplishments at a glance.</div>
           </div>
         </div>
         <div style={{ marginTop: '2.5rem' }}>
