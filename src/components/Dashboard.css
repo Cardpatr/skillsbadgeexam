@@ -19,7 +19,8 @@
 
 .dashboard-content {
   flex: 1;
-  padding: 20px;
+  /* padding: 20px; */
+  padding-top: 20rem;
   display: flex;
   justify-content: center;   /* Center horizontally */
   align-items: center;       /* Center vertically */

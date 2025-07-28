@@ -48,8 +48,7 @@ export default function Dashboard() {
 
   return (
     <div className="dashboard-container">
-      <h2>Dashboard Overview</h2>
-
+      
       <div className="dashboard-cards">
         <div className="dashboard-card">
           <span className="dashboard-icon material-icons">assignment</span>
