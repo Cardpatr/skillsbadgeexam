@@ -94,3 +94,20 @@
 .sidebar-logout-btn:hover {
   background: #d9363e;
 }
+
+.sidebar-arrow {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 20px;
+  height: 20px;
+  font-size: 30px;
+  color: #ccc;
+  transition: transform 0.4s ease;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.sidebar-arrow.rotated {
+  transform: rotate(90deg);
+}

@@ -9,7 +9,6 @@ export default function Sidebar() {
 
   const handleLogout = (e) => {
     e.preventDefault();
-    // localStorage.removeItem('auth'); // Uncomment if you store auth info
     navigate('/login');
   };
 
@@ -19,6 +18,10 @@ export default function Sidebar() {
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
+      <div className={`sidebar-arrow ${hovered ? 'rotated' : ''}`}>
+        ▶
+      </div>
+
       <nav className="sidebar-nav">
         <ul>
           <li><Link to="/dashboard">Dashboard</Link></li>
