@@ -1,5 +1,6 @@
 // src/components/LoginPage.js
 import React from 'react';
+import './LoginPage.css'; 
 import { useNavigate, Link } from 'react-router-dom';
 
 export default function LoginPage() {
@@ -11,17 +12,16 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="centered-container">
-      <h2>Login Page</h2>
-      <form onSubmit={handleLogin}>
-        <input type="text" placeholder="Username" required />
-        <br /><br />
-        <input type="password" placeholder="Password" required />
-        <br /><br />
-        <button type="submit">Login</button>
-      </form>
-      <br />
-      <Link to="/">Back to Landing Page</Link>
+    <div className="login-container">
+      <div className="login-box">
+        <h2 className="login-title">Login</h2>
+        <form onSubmit={handleLogin} className="login-form">
+          <input type="text" placeholder="Username" required />
+          <input type="password" placeholder="Password" required />
+          <button type="submit" className="lighter-btn">Login</button>
+        </form>
+        <Link to="/" className="back-link">← Back to Landing Page</Link>
+      </div>
     </div>
   );
 }
