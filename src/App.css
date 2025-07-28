@@ -1,0 +1,39 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  text-align: center;
+  margin-top: 100px;
+}
+
+.dashboard {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  width: 200px;
+  background-color: #333;
+  padding: 20px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar a {
+  color: white;
+  text-decoration: none;
+  margin: 10px 0;
+}
+
+.content {
+  flex: 1;
+  padding: 20px;
+}
+
+input:-webkit-autofill {
+  box-shadow: 0 0 0 1000px white inset !important;
+  -webkit-text-fill-color: black !important;
+}
