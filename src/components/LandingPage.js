@@ -1,35 +1,66 @@
-// src/components/LandingPage.js
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './LandingPage.css'; 
 
 export default function LandingPage() {
+  const iconStyle = {
+    fontSize: '56px',
+    color: '#75eff3ff',
+    marginBottom: '12px'
+  };
+
+  const iconStyle2 = {
+    fontSize: '28px',
+    color: '#1a1a1aff'
+  };
+
+  const submitBtnStyle = {
+    padding: '12px 24px',
+    backgroundColor: '#75eff3ff',
+    color: '#000',
+    fontWeight: 'bold',
+    fontSize: '16px',
+    borderRadius: '30px',
+    border: 'none',
+    cursor: 'pointer',
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: '10px',
+    textAlign: 'center',
+    textDecoration: 'none',
+    maxWidth: '300px',
+    margin: '20px auto'
+  };
+
   return (
+    
     <div className="dashboard-content">
       <div className="container">
-        <h2 className="landing-title">Welcome to Your Productivity Hub!</h2>
+        <h1 className="landing-title">Welcome to Your Productivity Hub!</h1>
         <p className="landing-subtitle">Get started by exploring the features below:</p>
 
         <div className="landing-cards">
           {[
             {
-              icon: "https://img.icons8.com/ios-filled/50/000000/add--v1.png",
+              icon: "add",
               title: "Add Tasks",
               desc: "Quickly add new to-dos and stay organized."
             },
             {
-              icon: "https://img.icons8.com/ios-filled/50/000000/edit--v1.png",
+              icon: "edit",
               title: "Organize & Edit",
               desc: "Easily update and manage your tasks."
             },
             {
-              icon: "https://img.icons8.com/ios-filled/50/000000/report-card.png",
+              icon: "assessment",
               title: "Track Progress",
               desc: "See your accomplishments at a glance."
             },
           ].map((item, idx) => (
             <div key={idx} className="dashboard-card">
-              <img src={item.icon} alt={item.title} className="dashboard-card-icon" />
+              <span className="material-icons" style={iconStyle}>
+                {item.icon}
+              </span>
               <div className="dashboard-card-title">{item.title}</div>
               <div className="dashboard-card-desc">{item.desc}</div>
             </div>
@@ -37,10 +68,10 @@ export default function LandingPage() {
         </div>
 
         <div className="login-card-container">
-          <Link to="/login" className="dashboard-card-link">
-            <div className="dashboard-card login-card">
-              <span role="img" aria-label="login" className="login-icon">🔑</span>
-              <div className="dashboard-card-title">Login to Get Started</div>
+          <Link to="/login" className="dashboard-card-link" style={{ textDecoration: 'none' }}>
+            <div style={submitBtnStyle}>
+              <span className="material-icons" style={iconStyle2}>login</span>
+              <div>Login to Get Started</div>
             </div>
           </Link>
         </div>
