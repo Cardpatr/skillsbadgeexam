@@ -17,7 +17,7 @@ body {
   padding: 24px;
   box-sizing: border-box;
   width: 100%;
-  max-width: 400px;
+  max-width: 700px;
   margin: 0 auto;
 }
 
@@ -39,15 +39,16 @@ p {
 .centered-container p {
   background: rgba(40, 40, 40, 0.85);
   color: #f5f5f5;
-  font-size: 1.15rem;
+  font-size: 1.18rem;
   font-weight: 500;
-  padding: 18px 22px;
+  padding: 22px 32px;
   border-radius: 12px;
   margin: 18px 0;
   box-shadow: 0 2px 12px 0 rgba(0,0,0,0.12);
   line-height: 1.7;
   letter-spacing: 0.5px;
   transition: background 0.3s, color 0.3s;
+  max-width: 650px;
 }
 
 /* Links */
