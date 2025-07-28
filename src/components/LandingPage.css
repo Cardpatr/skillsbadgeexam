@@ -1,0 +1,94 @@
+.dashboard-content {
+  padding: 60px 20px;
+  background-color: #121212;
+  min-height: 100vh;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  max-width: 1000px;
+  width: 100%;
+  text-align: center;
+}
+
+.landing-title {
+  font-size: 2.2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.landing-subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+  color: #ccc;
+}
+
+.landing-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px; /* Increased spacing between cards */
+  justify-content: center;
+  margin-bottom: 40px; /* Adds space below the row of cards */
+}
+
+.dashboard-card {
+  background-color: #1e1e1e;
+  border: 1px solid #333;
+  border-radius: 12px;
+  padding: 24px;
+  width: 260px;
+  margin-top: 5px; /* Optional: adds vertical spacing between rows on wrap */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.dashboard-card-icon {
+  width: 48px;
+  margin-bottom: 12px;
+}
+
+.dashboard-card-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.dashboard-card-desc {
+  font-size: 0.95rem;
+  color: #bbb;
+}
+
+.login-card-container {
+  display: flex;
+  justify-content: center;
+}
+
+.dashboard-card-link {
+  text-decoration: none;
+}
+
+.login-card {
+  background-color: #333;
+  color: white;
+  padding: 20px 30px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: background-color 0.3s ease;
+}
+
+.login-card:hover {
+  background-color: #313131;
+}
+
+.login-icon {
+  font-size: 1.5rem;
+}
